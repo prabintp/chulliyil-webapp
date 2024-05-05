@@ -1,5 +1,5 @@
 import type { Collection } from "tinacms";
-import { iconSchema } from "../../components/util/icon";
+import { headerSchema } from "./header";
 import { ColorPickerInput } from "../fields/color";
 
 const Global: Collection = {
@@ -11,55 +11,8 @@ const Global: Collection = {
     global: true,
   },
   fields: [
-    {
-      type: "object",
-      label: "Header",
-      name: "header",
-      fields: [
-        iconSchema as any,
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-        },
-        {
-          type: "string",
-          label: "Color",
-          name: "color",
-          options: [
-            { label: "Default", value: "default" },
-            { label: "Primary", value: "primary" },
-          ],
-        },
-        {
-          type: "object",
-          label: "Nav Links",
-          name: "nav",
-          list: true,
-          ui: {
-            itemProps: (item) => {
-              return { label: item?.label };
-            },
-            defaultItem: {
-              href: "home",
-              label: "Home",
-            },
-          },
-          fields: [
-            {
-              type: "string",
-              label: "Link",
-              name: "href",
-            },
-            {
-              type: "string",
-              label: "Label",
-              name: "label",
-            },
-          ],
-        },
-      ],
-    },
+    headerSchema as any
+   ,
     {
       type: "object",
       label: "Footer",
@@ -135,6 +88,14 @@ const Global: Collection = {
               label: "Lato",
               value: "lato",
             },
+            {
+              label: "Space Grotesk",
+              value: "space-grotesk",
+            },
+            {
+              label: "Montserrat",
+              value: "montserrat",
+            }
           ],
         },
         {

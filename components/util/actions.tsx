@@ -70,7 +70,7 @@ export const Actions = ({
               <Link key={index} href={action.link ? action.link : "/"}>
                 <button
                   data-tina-field={tinaField(action)}
-                  className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
+                  className={`z-10 relative flex items-center px-7 py-3 font-lato font-light text-sm transition duration-150 ease-out transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
                     parentColor === "primary"
                       ? invertedButtonColorClasses[theme.color]
                       : buttonColorClasses[theme.color]
@@ -113,3 +113,55 @@ export const Actions = ({
     </div>
   );
 };
+
+
+export interface ActionParams {
+  name: string;
+  label: string;
+}
+
+export const actionsSchema = (obj: ActionParams) => ({
+  ...obj,
+  type: "object",
+  list: true,
+  ui: {
+    defaultItem: {
+      label: "Action Label",
+      type: "button",
+      icon: true,
+      link: "/",
+    },
+    itemProps: (item) => ({ label: item.label }),
+  },
+  fields: [
+    {
+      label: "Label",
+      name: "label",
+      type: "string",
+    },
+    {
+      label: "Type",
+      name: "type",
+      type: "string",
+      options: [
+        { label: "Button", value: "button" },
+        { label: "Primary", value: "primary" },
+        { label: "Secondary", value: "secondary" },
+        { label: "Outlined", value: "outlined" },
+        { label: "Link", value: "link" },
+        { label: "External Link", value: "linkExternal" },
+      ],
+    },
+    {
+      label: "Icon",
+      name: "icon",
+      type: "boolean",
+    },
+    {
+      label: "Link",
+      name: "link",
+      type: "string",
+    },
+  ],
+})
+

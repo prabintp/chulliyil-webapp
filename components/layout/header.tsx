@@ -4,13 +4,15 @@ import { useRouter } from "next/router";
 import { Container } from "../util/container";
 import { useTheme } from ".";
 import { Icon } from "../util/icon";
+import { Actions } from "../util/actions";
 import { tinaField } from "tinacms/dist/react";
 import { GlobalHeader } from "../../tina/__generated__/types";
 
 export const Header = ({ data }: { data: GlobalHeader }) => {
   const router = useRouter();
   const theme = useTheme();
-
+  const { logoImage } = data;
+  console.log(JSON.stringify(data));
   const headerColor = {
     default:
       "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
@@ -72,15 +74,26 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
               href="/"
               className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]"
             >
-              <Icon
-                tinaField={tinaField(data, "icon")}
-                parentColor={data.color}
-                data={{
-                  name: data.icon.name,
-                  color: data.icon.color,
-                  style: data.icon.style,
-                }}
-              />
+               {/* Logo section */}
+         { logoImage.src ? (
+           <img
+           src={logoImage.src}
+           alt={logoImage.alt}
+           className="h-20 w-auto"
+         />
+          ): (
+            <Icon
+            tinaField={tinaField(data, "icon")}
+            parentColor={data.color}
+            data={{
+              name: data.icon.name,
+              color: data.icon.color,
+              style: data.icon.style,
+            }}
+          />
+
+         )}
+              
               <span data-tina-field={tinaField(data, "name")}>{data.name}</span>
             </Link>
           </h4>
@@ -148,6 +161,13 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                 );
               })}
           </ul>
+          {data.actions && (
+            <Actions
+              className="justify-center md:justify-start py-2"
+              parentColor={data.color}
+              actions={data.actions as any}
+            />
+          )}
         </div>
         <div
           className={`absolute h-1 bg-gradient-to-r from-transparent ${

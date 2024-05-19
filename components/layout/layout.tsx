@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { Header } from "./header";
+import { HeaderFlyout } from "./header-flyout"
 import { Footer } from "./footer";
 import { Theme } from "./theme";
 import layoutData from "../../content/global/index.json";
@@ -71,7 +72,8 @@ export const Layout = ({
                     } ${data.theme.font === "lato" && "font-lato"} ${data.theme.font === "space-grotesk" && "font-spaceGrotesk"
                     } ${data.theme.font === "sans" && "font-sans"} ${data.theme.font === "montserrat" && "font-montserrat"}`}
                 >
-                  <Header data={data?.header} />
+                  <HeaderFlyout data={data?.header}/>
+                    
                 
                   <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
                     {children}

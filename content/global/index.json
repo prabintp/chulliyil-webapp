@@ -5,9 +5,9 @@
       "color": "green",
       "style": "circle"
     },
-    "name": "",
+    "name": "CONNECT WITH GLAD",
     "logoImage": {
-      "src": "/uploads/logo.png",
+      "src": "/uploads/logo.svg",
       "alt": "connect-with-glad-logo"
     },
     "color": "default",

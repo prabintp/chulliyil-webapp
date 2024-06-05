@@ -5,7 +5,8 @@ blocks:
     headline: ''
     text: ''
     image:
-      src: /uploads/banner.jpg
+      src: /uploads/thomas-park-w9i7wMaM3EE-unsplash.jpg
+      alt: connect with glad - contact-us
     color: default
     variant: spotlight
     _template: hero

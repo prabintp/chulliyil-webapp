@@ -8,6 +8,8 @@ import type { TinaTemplate } from "tinacms";
 import { PageBlocksHero } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
+import Spotlight from "../common/spotlight";
+
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const theme = useTheme();
   const headlineColorClasses = {
@@ -21,56 +23,62 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     yellow: "from-yellow-400 to-yellow-600",
   };
 
-  return (
-    <Section color={data.color}>
+  const contentSection = () => { 
+    return (
+      <div className="row-start-2 md:row-start-1 md:col-span-3 text-center md:text-left">
+      {data.tagline && (
+        <h2
+          data-tina-field={tinaField(data, "tagline")}
+          className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20"
+        >
+          {data.tagline}
+          <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
+        </h2>
+      )}
+      {data.headline && (
+        <h3
+          data-tina-field={tinaField(data, "headline")}
+          className={`w-full relative	mb-10 text-5xl md:max-w-[80%] font-semibold tracking-normal leading-tight title-font`}
+        >
+          <span
+            className={`bg-clip-text text-transparent bg-gradient-to-r  ${
+              data.color === "primary" || data.variant === "spotlight"
+                ? `from-white to-gray-100`
+                : headlineColorClasses[theme.color]
+            }`}
+          >
+            {data.headline}
+          </span>
+        </h3>
+      )}
+      {data.text && (
+        <div
+          data-tina-field={tinaField(data, "text")}
+          className={`prose prose-lg mx-auto md:mx-0 mb-10 ${
+            data.color === "primary" || data.variant === "spotlight" ? `prose-primary` : `dark:prose-dark`
+          }`}
+        >
+          <TinaMarkdown content={data.text} />
+        </div>
+      )}
+      {data.actions && (
+        <Actions
+          className="justify-center md:justify-start py-2"
+          parentColor={data.color}
+          actions={data.actions}
+        />
+      )}
+    </div>
+    )
+  }
+
+  const heroSection = () => {
+    return (
       <Container
         size="large"
         className="grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center"
       >
-        <div className="row-start-2 md:row-start-1 md:col-span-3 text-center md:text-left">
-          {data.tagline && (
-            <h2
-              data-tina-field={tinaField(data, "tagline")}
-              className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20"
-            >
-              {data.tagline}
-              <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
-            </h2>
-          )}
-          {data.headline && (
-            <h3
-              data-tina-field={tinaField(data, "headline")}
-              className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
-            >
-              <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r  ${
-                  data.color === "primary"
-                    ? `from-white to-gray-100`
-                    : headlineColorClasses[theme.color]
-                }`}
-              >
-                {data.headline}
-              </span>
-            </h3>
-          )}
-          {data.text && (
-            <div
-              data-tina-field={tinaField(data, "text")}
-              className={`prose prose-lg mx-auto md:mx-0 mb-10 ${
-                data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-              }`}
-            >
-              <TinaMarkdown content={data.text} />
-            </div>
-          )}
-          {data.actions && (
-            <Actions
-              className="justify-center md:justify-start py-2"
-              parentColor={data.color}
-              actions={data.actions}
-            />
-          )}
-        </div>
+       {contentSection()}
         {data.image && (
           <div
             data-tina-field={tinaField(data.image, "src")}
@@ -89,6 +97,29 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           </div>
         )}
       </Container>
+    )
+  }
+
+  const renderSection = () => {
+    switch (data.variant) {
+      case "spotlight":
+        return (
+          <Spotlight backgroundImage={data.image}>
+            <div className=" bg-gradient-to-tr from-black to-transparent to-80% flex flex-col justify-end  h-full p-[20px] md:p-[50px] pt-0">
+            {contentSection()}
+             </div>
+          
+          </Spotlight>
+        );
+      case "default":
+      default:
+        return heroSection();
+    }
+  }
+
+  return (
+    <Section color={data.color}>
+      {renderSection()}
     </Section>
   );
 };
@@ -186,6 +217,15 @@ export const heroBlockSchema: TinaTemplate = {
         { label: "Default", value: "default" },
         { label: "Tint", value: "tint" },
         { label: "Primary", value: "primary" },
+      ],
+    },
+    {
+      type: "string",
+      label: "Variant",
+      name: "variant",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Spotlight", value: "spotlight" },
       ],
     },
   ],

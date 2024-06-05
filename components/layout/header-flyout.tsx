@@ -22,6 +22,7 @@ import { GlobalHeader } from "../../tina/__generated__/types";
 import { useTheme } from ".";
 
 import { Actions } from "../util/actions";
+import { useHeaderState } from "./header-hook";
 
 const products = [
   {
@@ -65,6 +66,9 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+
+
+
 export function HeaderFlyout({ data }: { data: GlobalHeader }) {
   const router = useRouter();
   const theme = useTheme();
@@ -73,7 +77,23 @@ export function HeaderFlyout({ data }: { data: GlobalHeader }) {
 
   console.log(JSON.stringify(data));
   const { logoImage } = data;
+  const shouldCloseOnScroll = true,
+  alwaysSticky = false,
+  menuIsOpen = false
 
+  const { isVisible, isAtTop, shouldStick } = useHeaderState(
+    shouldCloseOnScroll,
+    alwaysSticky,
+    menuIsOpen
+  )
+  
+  console.log('isVisible', isVisible)
+  console.log('isAtTop', isAtTop)
+  console.log('shouldStick', shouldStick)  
+
+
+  const headerScroll = "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
+  headerAtTop = "";
   const headerColor = {
     default:
       "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
@@ -127,7 +147,7 @@ export function HeaderFlyout({ data }: { data: GlobalHeader }) {
 
   return (
     <header
-      className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
+      className={`${isVisible ? 'translate-y-0 bg-gradient-to-r from-indigo-500' : "-translate-y-full" } ${isVisible && !shouldStick ? headerAtTop : "" } ${shouldStick && isVisible  ? headerScroll  : "notshouldStick" }  ${isVisible ? 'visibless' : "notisVisible" } ${isAtTop ? 'isAtTop' : "notisAtTop" } overflow-hidden ${data.variant === "sticky" ? ' fixed z-20 w-full' : ` ${headerColorCss} relative` }`}
     >
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -300,8 +320,8 @@ export function HeaderFlyout({ data }: { data: GlobalHeader }) {
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-0 z-30" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-30 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>

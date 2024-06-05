@@ -82,6 +82,7 @@ export const Layout = ({
                     rawData={rawData}
                     data={data?.footer}
                     icon={data?.header.icon}
+                    logo={data?.header.logoImage}
                   />
                 </div>
               </Theme>

@@ -66,6 +66,15 @@ export const headerSchema =
               },
             ],
           },
+          {
+            type: "string",
+            label: "Variant",
+            name: "variant",
+            options: [
+              { label: "Default", value: "default" },
+              { label: "sticky", value: "sticky" },
+            ],
+          },
             actionsSchema({name: 'actions', label: 'Actions'}) as ActionParams,
         ],
       }

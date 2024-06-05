@@ -1,15 +1,15 @@
 ---
-title: Tina Cloud Starter
+title: connect with glad
 blocks:
   - tagline: ''
-    headline: BUILDING BRIDGES OF COMMUNCIATION FOR A CONNECTED WORLD
+    headline: CONNECT WITH GLAD
     text: |
-      steps to find the solution
+      Building bridges of communication for a connected world.
     actions:
       - label: Explore How
         type: button
         icon: true
-        link: '#'
+        link: /about
     image:
       src: /uploads/connect-with-glad.jpg
       alt: >-
@@ -18,36 +18,60 @@ blocks:
     color: tint
     variant: spotlight
     _template: hero
+  - tagline: ''
+    headline: ''
+    text: >
+      Connect with glad is a private speech language therapy and behavioral
+      therapy center based in Phnom Penh, Cambodia. We are a passionate team
+      dedicated to unlocking the power of communication and fostering positive
+      behavioral changes.
+    image:
+      src: /uploads/aboutusbanner.png
+    variant: default
+    _template: hero
   - items:
       - icon:
-          name: BiCodeBlock
+          name: BiBarcodeReader
+          color: blue
+          style: float
+        title: SCREENING
+        text: >-
+          An initial screening is done to determine whether the child requires a
+          further evaluation
+      - icon:
+          name: BiListCheck
+          color: orange
+          style: float
+        title: EVALUATION
+        text: >-
+          An in-depth evaluation of the child is done based on the findings of
+          the initial screening.
+      - icon:
+          name: BiDonateBlood
+          color: purple
+          style: float
+        title: THERAPY
+        text: >-
+          Once an evaluation and a
+
+          treatment plan are established, the individual's specific goals will
+          be
+      - icon:
+          name: BiMaleFemale
           color: red
           style: float
-        title: Amazing Feature
+        title: FAMILY SUPPORT
         text: >-
-          Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
-          Praesent ac faucibus risus, eu lacinia enim.
-      - icon:
-          name: BiLike
-          color: primary
-          style: float
-        title: This Is a Feature
-        text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
-      - icon:
-          name: BiPalette
-          color: green
-          style: float
-        title: Configurable Theme
-        text: >-
-          Edit global theme configuration with Tina. Change your theme's primary
-          color, font, or icon set.
+          An initial screening is done to determine whether the child requires a
+          further evaluation.
     color: tint
     _template: features
   - quote: >-
-      There are only two hard things in Computer Science: cache invalidation and
-      naming things.
-    author: Phil Karlton
-    color: primary
+      "Glad has been a game-changer for our family. Our child struggled with
+      communication and behavioral challenges, but thanks to the dedicated team
+      at Glad”
+    author: Jenn Wilson & Family
+    color: tint
     _template: testimonial
 ---
 

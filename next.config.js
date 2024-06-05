@@ -20,4 +20,7 @@ module.exports = {
       },
     ];
   },
+  images: {
+    domains: ['https://glad-equity.vercel.app/'],
+  },
 };

@@ -10,7 +10,7 @@ interface SpotlightProps {
 
 const Spotlight: React.FC<SpotlightProps> = ({ backgroundImage, children }) => {
   return (
-    <div className="relative w-full h-screen md:max-h-[670px]">
+    <div className="relative w-full h-screen max-h-[670px] md:max-h-[670px]">
       
       <div className="absolute inset-0 flex items-center justify-center z-0">
       <img

@@ -381,10 +381,12 @@ export function HeaderFlyout({ data }: { data: GlobalHeader }) {
                     </>
                   )}
                 </Disclosure> */}
-                <ul className="flex flex-col gap-4 py-2">
+                <ul className="flex flex-col gap-4 py-2 font-light text-base">
                 {data.nav &&
                   data.nav.map((item, i) => (
-                    <li key={`${item.label}-${i}`}>
+                    <li key={`${item.label}-${i}`} 
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block rounded">
                       <Link
                         data-tina-field={tinaField(item, "label")}
                         href={`/${item.href}`}

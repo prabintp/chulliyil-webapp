@@ -19,7 +19,7 @@ export const Actions = ({
     blue: "text-white bg-blue-500 hover:bg-blue-600 bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-400 hover:to-blue-500",
     teal: "text-white bg-teal-500 hover:bg-teal-600 bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-400 hover:to-teal-500",
     green:
-      "text-white bg-green-500 hover:bg-green-600 bg-gradient-to-r from-green-400 to-green-600 hover:from-green-400 hover:to-green-500",
+      "text-white bg-green-500 hover:bg-green-600 ",
     red: "text-white bg-red-500 hover:bg-red-600 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500",
     pink: "text-white bg-pink-500 hover:bg-pink-600 bg-gradient-to-r from-pink-400 to-pink-600 hover:from-pink-400 hover:to-pink-500",
     purple:
@@ -47,9 +47,9 @@ export const Actions = ({
 
   const linkButtonColorClasses = {
     blue: "text-blue-600 dark:text-blue-400 hover:text-blue-400 dark:hover:text-blue-200",
-    teal: "ttext-teal-600 dark:text-teal-400 hover:text-teal-400 dark:hover:text-teal-200",
+    teal: "text-teal-600 dark:text-teal-400 hover:text-teal-400 dark:hover:text-teal-200",
     green:
-      "text-green-600 dark:text-green-400 hover:text-green-400 dark:hover:text-green-200",
+      "text-green-400 dark:text-green-200 hover:text-green-600 dark:hover:text-green-400",
     red: "text-red-600 dark:text-red-400 hover:text-red-400 dark:hover:text-red-200",
     pink: "text-pink-600 dark:text-pink-400 hover:text-pink-400 dark:hover:text-pink-200",
     purple:
@@ -70,7 +70,7 @@ export const Actions = ({
               <Link key={index} href={action.link ? action.link : "/"}>
                 <button
                   data-tina-field={tinaField(action)}
-                  className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
+                  className={`z-10 relative flex items-center px-7 py-3 font-lato font-light text-sm transition duration-150 ease-out transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
                     parentColor === "primary"
                       ? invertedButtonColorClasses[theme.color]
                       : buttonColorClasses[theme.color]
@@ -113,3 +113,55 @@ export const Actions = ({
     </div>
   );
 };
+
+
+export interface ActionParams {
+  name: string;
+  label: string;
+}
+
+export const actionsSchema = (obj: ActionParams) => ({
+  ...obj,
+  type: "object",
+  list: true,
+  ui: {
+    defaultItem: {
+      label: "Action Label",
+      type: "button",
+      icon: true,
+      link: "/",
+    },
+    itemProps: (item) => ({ label: item.label }),
+  },
+  fields: [
+    {
+      label: "Label",
+      name: "label",
+      type: "string",
+    },
+    {
+      label: "Type",
+      name: "type",
+      type: "string",
+      options: [
+        { label: "Button", value: "button" },
+        { label: "Primary", value: "primary" },
+        { label: "Secondary", value: "secondary" },
+        { label: "Outlined", value: "outlined" },
+        { label: "Link", value: "link" },
+        { label: "External Link", value: "linkExternal" },
+      ],
+    },
+    {
+      label: "Icon",
+      name: "icon",
+      type: "boolean",
+    },
+    {
+      label: "Link",
+      name: "link",
+      type: "string",
+    },
+  ],
+})
+

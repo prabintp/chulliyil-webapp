@@ -5,7 +5,11 @@
       "color": "green",
       "style": "circle"
     },
-    "name": "Tina Starter",
+    "name": "CONNECT WITH GLAD",
+    "logoImage": {
+      "src": "/uploads/logo.svg",
+      "alt": "connect-with-glad-logo"
+    },
     "color": "default",
     "nav": [
       {
@@ -20,6 +24,14 @@
         "href": "posts",
         "label": "Blog"
       }
+    ],
+    "actions": [
+      {
+        "label": "BOOK A SCREENING",
+        "type": "button",
+        "icon": false,
+        "link": "/"
+      }
     ]
   },
   "footer": {
@@ -32,7 +44,7 @@
   },
   "theme": {
     "color": "green",
-    "font": "sans",
+    "font": "montserrat",
     "darkMode": "light"
   }
 }

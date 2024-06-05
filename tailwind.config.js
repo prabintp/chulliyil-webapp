@@ -12,7 +12,6 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       teal: colors.cyan,
-      green: colors.emerald,
       red: colors.rose,
       purple: colors.purple,
       pink: colors.pink,
@@ -54,6 +53,20 @@ module.exports = {
         700: "#D04017",
         800: "#C1360F",
       },
+      green: {
+        50: '#f5faeb',
+        100: '#e7f5d2',
+        200: '#d2ebab',
+        300: '#b4dc7a',
+        400: '#8dc63f',
+        500: '#78b032',
+        600: '#5c8c24',
+        700: '#486b20',
+        800: '#3b561e',
+        900: '#33491e',
+        950: '#19280b',
+    }
+    
     },
     screens: {
       sm: "600px",
@@ -99,8 +112,10 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
+        spaceGrotesk: ["Space Grotesk", ...defaultTheme.fontFamily.sans],
         nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
         lato: ["Lato", ...defaultTheme.fontFamily.sans],
+        montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
       typography: (theme) => ({
         DEFAULT: {

@@ -1,12 +1,13 @@
 ---
 title: About
 blocks:
-  - tagline: Here's some text above the other text
-    headline: This Big Text is Totally Awesome
+  - tagline: ''
+    headline: What We Do
     text: ''
     image:
       src: /uploads/steven-libralon-Do1GQljlNk8-unsplash.jpg
       alt: what we do - about us
+    variant: spotlight
     _template: hero
   - body: >
       ### WELCOME TO CONNECT WITH GLAD

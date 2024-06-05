@@ -1,6 +1,13 @@
 ---
 title: About
 blocks:
+  - tagline: Here's some text above the other text
+    headline: This Big Text is Totally Awesome
+    text: ''
+    image:
+      src: /uploads/steven-libralon-Do1GQljlNk8-unsplash.jpg
+      alt: what we do - about us
+    _template: hero
   - body: >
       ### WELCOME TO CONNECT WITH GLAD
 
@@ -39,7 +46,7 @@ blocks:
 
       * Social communication disorder
 
-      * Cleft lip and palate 
+      * Cleft lip and palate
 
       * ADHD
 
@@ -49,13 +56,13 @@ blocks:
 
       * Cerebral palsy
 
-      * Behavioral issues associated to any conditions 
+      * Behavioral issues associated to any conditions
 
       * Apraxia
 
       * Intellectual Disability Disorder (IDD)
 
-      * Hearing impairment 
+      * Hearing impairment
 
       * Global development delay
     color: default

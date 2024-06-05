@@ -105,7 +105,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
       case "spotlight":
         return (
           <Spotlight backgroundImage={data.image}>
-            <div className=" bg-gradient-to-tr from-black to-transparent to-80%  flex flex-col justify-end  h-full pb-[60px] md:p-[50px] pt-0">
+            <div className=" bg-gradient-to-tr from-black to-transparent to-80%  flex flex-col justify-end  h-full px-4 pb-[60px] md:p-[50px] pt-0">
             {contentSection()}
              </div>
           

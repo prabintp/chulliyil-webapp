@@ -5,7 +5,7 @@
       "color": "green",
       "style": "circle"
     },
-    "name": "CONNECT WITH GLAD",
+    "name": "",
     "logoImage": {
       "src": "/uploads/logo.svg",
       "alt": "connect-with-glad-logo"
@@ -21,10 +21,11 @@
         "label": "About"
       },
       {
-        "href": "posts",
-        "label": "Blog"
+        "href": "contact-us",
+        "label": "Contact Us"
       }
     ],
+    "variant": "sticky",
     "actions": [
       {
         "label": "BOOK A SCREENING",

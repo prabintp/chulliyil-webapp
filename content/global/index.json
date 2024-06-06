@@ -14,15 +14,15 @@
     "nav": [
       {
         "href": "",
-        "label": "Home"
+        "label": "HOME"
       },
       {
         "href": "about",
-        "label": "About"
+        "label": "ABOUT"
       },
       {
         "href": "contact-us",
-        "label": "Contact Us"
+        "label": "CONTACT US"
       }
     ],
     "variant": "sticky",
@@ -46,6 +46,6 @@
   "theme": {
     "color": "green",
     "font": "montserrat",
-    "darkMode": "light"
+    "darkMode": "dark"
   }
 }

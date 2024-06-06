@@ -15,7 +15,7 @@ blocks:
       alt: >-
         Photo of palm trees at sunset by Adam Birkett -
         unsplash.com/photos/75EFpyXu3Wg
-    color: tint
+    color: outlined
     variant: spotlight
     _template: hero
   - tagline: ''
@@ -27,6 +27,7 @@ blocks:
       behavioral changes.
     image:
       src: /uploads/aboutusbanner.png
+    color: tint
     variant: default
     _template: hero
   - items:

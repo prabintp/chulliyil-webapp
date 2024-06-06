@@ -7,6 +7,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksHero } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import { ColorPickerInput } from "../../tina/fields/color";
 
 import Spotlight from "../common/spotlight";
 
@@ -38,7 +39,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
       {data.headline && (
         <h3
           data-tina-field={tinaField(data, "headline")}
-          className={`w-full relative	mb-10 text-5xl md:max-w-[80%] font-semibold tracking-normal leading-tight title-font`}
+          className={`w-full relative text-5xl md:max-w-[80%] font-light tracking-widest leading-tight title-font`}
         >
           <span
             className={`bg-clip-text text-transparent bg-gradient-to-r  ${
@@ -54,7 +55,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
       {data.text && (
         <div
           data-tina-field={tinaField(data, "text")}
-          className={`prose prose-lg mx-auto md:mx-0 mb-10 ${
+          className={`prose prose-lg mx-auto md:mx-0 mb-10 font-light ${
             data.color === "primary" || data.variant === "spotlight" ? `prose-primary` : `dark:prose-dark`
           }`}
         >
@@ -151,6 +152,7 @@ export const heroBlockSchema: TinaTemplate = {
       name: "text",
       type: "rich-text",
     },
+   
     {
       label: "Actions",
       name: "actions",
@@ -217,6 +219,7 @@ export const heroBlockSchema: TinaTemplate = {
         { label: "Default", value: "default" },
         { label: "Tint", value: "tint" },
         { label: "Primary", value: "primary" },
+        { label: "Outlined", value: "outlined" },
       ],
     },
     {

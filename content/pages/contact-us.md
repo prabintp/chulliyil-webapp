@@ -1,8 +1,8 @@
 ---
-title: Contact Us
+title: contact us
 blocks:
   - tagline: ''
-    headline: Contact Us
+    headline: CONTACT US
     text: ''
     image:
       src: /uploads/thomas-park-w9i7wMaM3EE-unsplash.jpg

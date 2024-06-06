@@ -45,6 +45,20 @@ export const Actions = ({
       "text-yellow-500 bg-white hover:bg-gray-50 bg-gradient-to-r from-gray-50 to-white hover:to-gray-100",
   };
 
+  const invertedOutLinedButtonColorClasses = {
+    blue: "text-blue-500 bg-transparent hover:bg-gray-50 bg-gradient-to-r from-gray-50 to-white hover:to-gray-100",
+    teal: "text-teal-500 bg-transparent hover:bg-gray-50 bg-gradient-to-r from-gray-50 to-white hover:to-gray-100",
+    green: "outline outline-offset-2 outline-green-500 hover:outline-gray-50 text-green-500 hover:text-gray-50",
+    red: "text-red-500 bg-transparent hover:bg-gray-50 bg-gradient-to-r from-gray-50 to-white hover:to-gray-100",
+    pink: "text-pink-500 bg-transparent hover:bg-gray-50 bg-gradient-to-r from-gray-50 to-white hover:to-gray-100",
+    purple:
+      "text-purple-500 bg-transparent hover:bg-gray-50 bg-gradient-to-r from-gray-50 to-white hover:to-gray-100",
+    orange:
+      "text-orange-500 bg-transparent hover:bg-gray-50 bg-gradient-to-r from-gray-50 to-white hover:to-gray-100",
+    yellow:
+      "text-yellow-500 bg-transparent hover:bg-gray-50 bg-gradient-to-r from-gray-50 to-white hover:to-gray-100",
+  };
+
   const linkButtonColorClasses = {
     blue: "text-blue-600 dark:text-blue-400 hover:text-blue-400 dark:hover:text-blue-200",
     teal: "text-teal-600 dark:text-teal-400 hover:text-teal-400 dark:hover:text-teal-200",
@@ -73,7 +87,7 @@ export const Actions = ({
                   className={`z-10 relative flex items-center px-7 py-3 font-lato font-light text-sm transition duration-150 ease-out transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
                     parentColor === "primary"
                       ? invertedButtonColorClasses[theme.color]
-                      : buttonColorClasses[theme.color]
+                      : parentColor === "outlined" ? invertedOutLinedButtonColorClasses[theme.color] : buttonColorClasses[theme.color]
                   }`}
                 >
                   {action.label}

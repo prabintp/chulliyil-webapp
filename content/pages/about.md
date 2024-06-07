@@ -2,7 +2,7 @@
 title: About
 blocks:
   - tagline: ''
-    headline: What We Do
+    headline: WHAT WE DO
     text: ''
     image:
       src: /uploads/pexels-tima-miroshnichenko-5428007.jpg

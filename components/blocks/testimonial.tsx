@@ -20,7 +20,7 @@ export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
       <Container size="large">
         <blockquote>
           <div
-            className={`relative z-10 max-w-3xl mx-auto text-3xl lg:text-4xl font-semibold tracking-normal text-center title-font ${
+            className={`relative z-10 max-w-3xl mx-auto text-3xl lg:text-4xl font-medium tracking-normal text-center title-font ${
               data.color === "primary"
                 ? `text-white`
                 : `text-gray-700 dark:text-gray-50`

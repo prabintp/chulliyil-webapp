@@ -7,7 +7,8 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksHero } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
-import { ColorPickerInput } from "../../tina/fields/color";
+import SectionHeading from "../common/section-heading";
+import { sectionHeadingSchema } from "../common/section-heading/schema";
 
 import Spotlight from "../common/spotlight";
 
@@ -75,10 +76,19 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
 
   const heroSection = () => {
     return (
+      <>
+      {data.sectionHeading && (
+        <Container size="large" className="grid grid-cols-1 pb-2 ">
+             <SectionHeading {...data.sectionHeading} className="md:w-9/12"
+        /> 
+        </Container>
+       
+      )}
       <Container
         size="large"
-        className="grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center"
+        className="grid grid-cols-1 md:grid-cols-5 gap-14 pb-0 items-center justify-center"
       >
+     
        {contentSection()}
         {data.image && (
           <div
@@ -98,6 +108,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           </div>
         )}
       </Container>
+      </>
     )
   }
 
@@ -137,6 +148,7 @@ export const heroBlockSchema: TinaTemplate = {
     },
   },
   fields: [
+    sectionHeadingSchema,
     {
       type: "string",
       label: "Tagline",

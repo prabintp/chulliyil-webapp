@@ -21,14 +21,22 @@
         "label": "ABOUT"
       },
       {
+        "href": "our-services",
+        "label": "OUR SERVICES"
+      },
+      {
         "href": "contact-us",
         "label": "CONTACT US"
+      },
+      {
+        "href": "careers",
+        "label": "CAREERS"
       }
     ],
     "variant": "sticky",
     "actions": [
       {
-        "label": "BOOK A SCREENING",
+        "label": "BOOK AN APPOINTMENT",
         "type": "button",
         "icon": false,
         "link": "/contact-us"

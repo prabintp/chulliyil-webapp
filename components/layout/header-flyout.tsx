@@ -74,8 +74,6 @@ export function HeaderFlyout({ data }: { data: GlobalHeader }) {
   const theme = useTheme();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  console.log(JSON.stringify(data));
   const { logoImage } = data;
   const shouldCloseOnScroll = true,
   alwaysSticky = false,
@@ -86,14 +84,8 @@ export function HeaderFlyout({ data }: { data: GlobalHeader }) {
     alwaysSticky,
     menuIsOpen
   )
-  
-  console.log('isVisible', isVisible)
-  console.log('isAtTop', isAtTop)
-  console.log('shouldStick', shouldStick)  
-
-
   const headerScroll = "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
-  headerAtTop = "";
+  headerAtTop = "font-medium bg-gradient-to-b from-black/60 to-transparent";
   const headerColor = {
     default:
       "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
@@ -118,7 +110,7 @@ export function HeaderFlyout({ data }: { data: GlobalHeader }) {
     blue: "border-b-3 border-blue-200 text-blue-700 dark:text-blue-300 font-medium dark:border-blue-700",
     teal: "border-b-3 border-teal-200 text-teal-700 dark:text-teal-300 font-medium dark:border-teal-700",
     green:
-      "border-b-3 border-green-200 text-green-700 dark:text-green-300 font-medium dark:border-green-700",
+      "border-b-3 border-green-200 text-green-700 dark:text-green-500 font-medium dark:border-green-700",
     red: "border-b-3 border-red-300 text-red-700 dark:text-green-300 font-medium dark:border-red-700",
     pink: "border-b-3 border-pink-200 text-pink-700 dark:text-pink-300 font-medium dark:border-pink-700",
     purple:
@@ -147,14 +139,14 @@ export function HeaderFlyout({ data }: { data: GlobalHeader }) {
 
   return (
     <header
-      className={`${isVisible ? 'translate-y-0 bg-gradient-to-r from-indigo-500' : "-translate-y-full" } ${isVisible && !shouldStick ? headerAtTop : "" } ${shouldStick && isVisible  ? headerScroll  : "notshouldStick" }  ${isVisible ? 'visibless' : "notisVisible" } ${isAtTop ? 'isAtTop' : "notisAtTop" } overflow-hidden ${data.variant === "sticky" ? ' fixed z-20 w-full' : ` ${headerColorCss} relative` }`}
+      className={`${isVisible ? 'translate-y-0 bg-gradient-to-b from-indigo-500' : "-translate-y-full" } ${isVisible && !shouldStick ? headerAtTop : "" } ${shouldStick && isVisible  ? headerScroll  : "text-white" }  ${isVisible ? 'visibless' : "notisVisible" } ${isAtTop ? 'isAtTop' : "notisAtTop" } overflow-hidden ${data.variant === "sticky" ? ' fixed z-20 w-full' : ` ${headerColorCss} relative` }`}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 "
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/home" className="-m-1.5 p-1.5">
             <span className="sr-only">{data.name}</span>
             <img
               className="h-16 w-auto"
@@ -162,7 +154,7 @@ export function HeaderFlyout({ data }: { data: GlobalHeader }) {
               alt={logoImage.alt}
             />
              <span data-tina-field={tinaField(data, "name")} className="font-semibold pt-2 text-gray-700">{data.name}</span>
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button

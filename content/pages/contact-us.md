@@ -3,9 +3,10 @@ title: contact us
 blocks:
   - tagline: ''
     headline: CONTACT US
-    text: ''
+    text: |
+      Empowering Communication and Fostering Growth in Phnom Penh
     image:
-      src: /uploads/thomas-park-w9i7wMaM3EE-unsplash.jpg
+      src: /uploads/kim-eang-eng-eeMjCvKT89E-unsplash.jpg
       alt: connect with glad - contact-us
     color: default
     variant: spotlight

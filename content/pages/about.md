@@ -3,7 +3,8 @@ title: About
 blocks:
   - tagline: ''
     headline: WHAT WE DO
-    text: ''
+    text: |
+      Empowering Communication and Fostering Growth in Phnom Penh
     image:
       src: /uploads/pexels-tima-miroshnichenko-5428007.jpg
       alt: what we do - about us

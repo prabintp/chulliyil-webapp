@@ -4,10 +4,19 @@ import { Section } from "../util/section";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksTestimonial } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import SectionHeading from "../common/section-heading";
+import { sectionHeadingSchema } from "../common/section-heading/schema";
 
 export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
   return (
     <Section color={data.color}>
+       {data.sectionHeading && (
+        <Container size="large" className="grid grid-cols-1 pb-2 ">
+             <SectionHeading {...data.sectionHeading} className="md:w-9/12"
+        /> 
+        </Container>
+       
+      )}
       <Container size="large">
         <blockquote>
           <div
@@ -74,6 +83,7 @@ export const testimonialBlockSchema: TinaTemplate = {
     },
   },
   fields: [
+    sectionHeadingSchema,
     {
       type: "string",
       ui: {

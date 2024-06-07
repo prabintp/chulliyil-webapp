@@ -18,19 +18,34 @@ blocks:
     color: outlined
     variant: spotlight
     _template: hero
-  - tagline: ''
+  - sectionHeading:
+      caption: ABOUT US
+      heading: We are a passionate team
+      subHeading: >-
+        Dedicated to unlocking the power of communication and fostering positive
+        behavioral changes
+    tagline: ''
     headline: ''
     text: >
       Connect with glad is a private speech language therapy and behavioral
       therapy center based in Phnom Penh, Cambodia. We are a passionate team
       dedicated to unlocking the power of communication and fostering positive
       behavioral changes.
+    actions:
+      - label: More
+        type: link
+        icon: true
+        link: /about
     image:
       src: /uploads/aboutusbanner.png
-    color: tint
+    color: outlined
     variant: default
     _template: hero
-  - items:
+  - sectionHeading:
+      caption: WORK STRATEGY
+      heading: How we make it Happen
+      subHeading: Steps to Identify the Problem and Develop a Solution
+    items:
       - icon:
           name: BiBarcodeReader
           color: blue
@@ -67,7 +82,23 @@ blocks:
           further evaluation.
     color: tint
     _template: features
-  - quote: >-
+  - tagline: ''
+    headline: Find the best solution for you
+    text: ''
+    actions:
+      - label: Book an appointment
+        type: button
+        icon: true
+        link: /contact-us
+    image:
+      src: /uploads/teacher-700.png
+    color: outlined
+    variant: default
+    _template: hero
+  - sectionHeading:
+      caption: Testimonial
+      heading: Our client feel proud about Us
+    quote: >-
       "Glad has been a game-changer for our family. Our child struggled with
       communication and behavioral challenges, but thanks to the dedicated team
       at Glad”

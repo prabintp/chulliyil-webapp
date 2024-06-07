@@ -7,6 +7,8 @@ import {
   PageBlocksFeaturesItems,
 } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import SectionHeading from "../common/section-heading";
+import { sectionHeadingSchema } from "../common/section-heading/schema";
 
 export const Feature = ({
   featuresColor,
@@ -51,6 +53,13 @@ export const Feature = ({
 export const Features = ({ data }: { data: PageBlocksFeatures }) => {
   return (
     <Section color={data.color}>
+       {data.sectionHeading && (
+        <Container size="large" className="grid grid-cols-1 pb-2 ">
+             <SectionHeading {...data.sectionHeading} className="md:w-9/12"
+        /> 
+        </Container>
+       
+      )}
       <Container
         className={`flex flex-wrap gap-x-10 gap-y-8 text-left`}
         size="large"
@@ -84,6 +93,7 @@ export const featureBlockSchema = {
     },
   },
   fields: [
+    sectionHeadingSchema,
     {
       type: "object",
       label: "Feature Items",

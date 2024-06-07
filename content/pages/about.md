@@ -5,7 +5,7 @@ blocks:
     headline: What We Do
     text: ''
     image:
-      src: /uploads/steven-libralon-Do1GQljlNk8-unsplash.jpg
+      src: /uploads/pexels-tima-miroshnichenko-5428007.jpg
       alt: what we do - about us
     variant: spotlight
     _template: hero

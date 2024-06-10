@@ -20,15 +20,17 @@ blocks:
       evidence based approaches we create a safe and nurturing environment for
       individuals of all ages to flourish.
     _template: sectionheading
+  - body: >
+      Connect with Glad transformation begins with every word and action. We
+      believe that everyone deserves to be heard and understood. Our therapists
+      who have more than 4 years' experience in Cambodia are highly skilled and
+      committed to develop effective communication skills, overcome barriers and
+      embrace their full potential.
+    _template: content
   - tagline: ''
-    headline: Our Vision
-    text: >
-      ##### Our vision is that building bridges of communication for a connected
-      world, at connect with Glad transformation begins with every word and
-      action. We believe that everyone deserves to be heard and understood. Our
-      therapists who have more than 4 years' experience in Cambodia are highly
-      skilled and committed to develop effective communication skills, overcome
-      barriers and embrace their full potential.
+    headline: Our vision is that building bridges of communication for a connected world
+    text: |
+      #####
     image:
       src: /uploads/pexels-jan-kroon-357445-1038935.jpg
       alt: connect with glad vision

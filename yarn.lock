@@ -8234,6 +8234,11 @@ swap-case@^2.0.2:
   dependencies:
     tslib "^2.0.3"
 
+swiper@^11.1.4:
+  version "11.1.4"
+  resolved "https://registry.npmjs.org/swiper/-/swiper-11.1.4.tgz"
+  integrity sha512-1n7kbYJB2dFEpUHRFszq7gys/ofIBrMNibwTiMvPHwneKND/t9kImnHt6CfGPScMHgI+dWMbGTycCKGMoOO1KA==
+
 tabbable@^6.0.1:
   version "6.2.0"
   resolved "https://registry.npmjs.org/tabbable/-/tabbable-6.2.0.tgz"

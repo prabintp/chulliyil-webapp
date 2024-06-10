@@ -1,23 +1,49 @@
 ---
 title: connect with glad
 blocks:
-  - tagline: ''
-    headline: CONNECT WITH GLAD
-    text: |
-      Building bridges of communication for a connected world.
-    actions:
-      - label: Explore How
-        type: button
-        icon: true
-        link: /about
-    image:
-      src: /uploads/connect-with-glad.jpg
-      alt: >-
-        Photo of palm trees at sunset by Adam Birkett -
-        unsplash.com/photos/75EFpyXu3Wg
-    color: outlined
-    variant: spotlight
-    _template: hero
+  - hero:
+      - tagline: ''
+        headline: CONNECT WITH GLAD
+        text: |
+          Building bridges of communication for a connected world.
+        actions:
+          - label: Explore How
+            type: button
+            icon: true
+            link: /about
+        image:
+          src: /uploads/connectwithglad.jpg
+          alt: alt
+        color: outlined
+        variant: spotlight
+      - tagline: ''
+        headline: WE MAKE IT HAPPEN
+        text: >
+          innovative integrated therapies and evidence based approaches we
+          create a safe and nurturing environment for individuals of all ages to
+          flourish.
+        actions:
+          - label: Explore How
+            type: button
+            icon: true
+            link: /about
+        image:
+          src: /uploads/connect-with-glad.jpg
+          alt: alt text
+        color: outlined
+        variant: spotlight
+    config:
+      spaceBetween: 0
+      slidesPerView: 1
+      navigation: true
+      enableAutoplay: true
+      autoplay:
+        delay: 5000
+        disableOnInteraction: true
+      pagination:
+        clickable: false
+      loop: true
+    _template: carousel
   - sectionHeading:
       caption: ABOUT US
       heading: We are a passionate team

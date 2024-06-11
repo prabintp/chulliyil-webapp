@@ -54,6 +54,6 @@
   "theme": {
     "color": "green",
     "font": "montserrat",
-    "darkMode": "dark"
+    "darkMode": "system"
   }
 }

@@ -9,6 +9,7 @@ import {
 import { tinaField } from "tinacms/dist/react";
 import SectionHeading from "../common/section-heading";
 import { sectionHeadingSchema } from "../common/section-heading/schema";
+import { FadeIn } from "../util/fade-in";
 
 export const Feature = ({
   featuresColor,
@@ -54,12 +55,15 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
   return (
     <Section color={data.color}>
        {data.sectionHeading && (
+        <FadeIn>
         <Container size="large" className="grid grid-cols-1 pb-2 ">
              <SectionHeading {...data.sectionHeading} className="md:w-9/12"
         /> 
         </Container>
+        </FadeIn>
        
       )}
+       <FadeIn>
       <Container
         className={`flex flex-wrap gap-x-10 gap-y-8 text-left`}
         size="large"
@@ -69,6 +73,7 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
             return <Feature featuresColor={data.color} key={i} data={block} />;
           })}
       </Container>
+      </FadeIn>
     </Section>
   );
 };

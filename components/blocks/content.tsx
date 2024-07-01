@@ -5,10 +5,12 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksContent } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import { FadeIn } from "../util/fade-in";
 
 export const Content = ({ data }: { data: PageBlocksContent }) => {
   return (
     <Section color={data.color}>
+      <FadeIn>
       <Container
         className={`prose prose-lg ${
           data.color === "primary" ? `prose-primary` : `dark:prose-dark`
@@ -19,6 +21,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
       >
         <TinaMarkdown content={data.body} />
       </Container>
+      </FadeIn>
     </Section>
   );
 };

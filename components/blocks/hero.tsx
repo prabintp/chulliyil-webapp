@@ -9,6 +9,7 @@ import { PageBlocksHero } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 import SectionHeading from "../common/section-heading";
 import { sectionHeadingSchema } from "../common/section-heading/schema";
+import { FadeIn } from "../util/fade-in";
 
 import Spotlight from "../common/spotlight";
 
@@ -78,17 +79,19 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     return (
       <>
       {data.sectionHeading && (
+        <FadeIn>
         <Container size="large" className="grid grid-cols-1 pb-2 ">
              <SectionHeading {...data.sectionHeading} className="md:w-9/12"
         /> 
         </Container>
+        </FadeIn>
        
       )}
+      <FadeIn>
       <Container
         size="large"
-        className="grid grid-cols-1 md:grid-cols-5 gap-14 pb-0 items-center justify-center"
+        className="grid grid-cols-1 md:grid-cols-5 gap-14 pb-18 items-center justify-center"
       >
-     
        {contentSection()}
         {data.image && (
           <div
@@ -108,6 +111,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           </div>
         )}
       </Container>
+      </FadeIn>
       </>
     )
   }
@@ -118,7 +122,9 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         return (
           <Spotlight backgroundImage={data.image}>
             <div className=" bg-gradient-to-tr from-black to-transparent to-80%  flex flex-col justify-end  h-full px-4 pb-[60px] md:p-[50px] pt-0">
+              <FadeIn>
             {contentSection()}
+            </FadeIn>
              </div>
           
           </Spotlight>

@@ -6,17 +6,21 @@ import { PageBlocksTestimonial } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 import SectionHeading from "../common/section-heading";
 import { sectionHeadingSchema } from "../common/section-heading/schema";
+import { FadeIn } from "../util/fade-in";
 
 export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
   return (
     <Section color={data.color}>
        {data.sectionHeading && (
+        <FadeIn>
         <Container size="large" className="grid grid-cols-1 pb-2 ">
              <SectionHeading {...data.sectionHeading} className="md:w-9/12"
         /> 
         </Container>
+        </FadeIn>
        
       )}
+      <FadeIn>
       <Container size="large">
         <blockquote>
           <div
@@ -66,6 +70,7 @@ export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
           </footer>
         </blockquote>
       </Container>
+      </FadeIn>
     </Section>
   );
 };

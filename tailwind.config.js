@@ -116,6 +116,20 @@ module.exports = {
         nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
         lato: ["Lato", ...defaultTheme.fontFamily.sans],
         montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans],
+        marcellus: ["Marcellus", "Georgia", ...defaultTheme.fontFamily.serif],
+        manjari: ["Manjari", "Noto Sans Malayalam", ...defaultTheme.fontFamily.sans],
+      },
+      // Editorial heading/paragraph scale (clamp-based) used by the
+      // ustavam2026 festival microsite blocks.
+      fontSize: {
+        "utsavam-eyebrow": ["0.72rem", { lineHeight: "1.6", letterSpacing: "0.28em" }],
+        "utsavam-body": ["1.0625rem", { lineHeight: "1.7" }],
+        "utsavam-h3": ["1.15rem", { lineHeight: "1.35" }],
+        "utsavam-h2": ["clamp(1.6rem, 3.6vw, 2.5rem)", { lineHeight: "1.15" }],
+        "utsavam-h2-sub": ["0.6em", { lineHeight: "1.3", letterSpacing: "0.06em" }],
+        "utsavam-h1": ["clamp(2rem, 6vw, 4.4rem)", { lineHeight: "1.15" }],
+        "utsavam-h1-sub": ["clamp(1rem, 2.4vw, 1.6rem)", { lineHeight: "1.4", letterSpacing: "0.04em" }],
+        "utsavam-quote": ["clamp(1.3rem, 3vw, 2rem)", { lineHeight: "1.5" }],
       },
       typography: (theme) => ({
         DEFAULT: {
